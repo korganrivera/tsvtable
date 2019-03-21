@@ -30,7 +30,7 @@ IQ RANK	animal	diet
 2	pigs	omnivores
 1	chimpanzees	omnivores
 ```
-.tsv tsv_examples/animals.tsv
+./tsv tsv_examples/animals.tsv
 ```
 .--------------------------------------------,
 | IQ RANK | animal              | diet       |
