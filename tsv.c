@@ -110,6 +110,7 @@ int main(int argc, char **argv){
 
 
     // check array
+    /*
     puts("checking array");
     for(i = 0; i < rows; i++){
         for(j = 0; j < cols; j++){
@@ -118,8 +119,8 @@ int main(int argc, char **argv){
         putchar('\n');
     }
     printf("rows = %u, cols = %u", rows, cols);
+    */
 
-//exit(0);
     // Find the largest width for each column.
     unsigned *col_width = malloc(cols * sizeof(unsigned));
     for(i = 0; i < cols; i++){
@@ -137,8 +138,8 @@ int main(int argc, char **argv){
     for(i = 0; i < cols; i++)
         table_width += col_width[i];
     table_width += 3 * cols + 1;
-printf("table width = %u\n", table_width);
-//exit(0);
+    // printf("table width = %u\n", table_width);
+    //exit(0);
     // draw top of table.
     printf("\n%c", TOP_LEFT);
     for(i = 0; i < table_width - 2; i++)
