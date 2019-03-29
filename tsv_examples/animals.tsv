@@ -1,26 +1,26 @@
-IQ RANK	animal	diet
-25	squid	carnivore
-24	spider	carnivore
-23	ants	omnivore
-22	baboons	carnivore
-21	sea lion	carnivore
-20	orangutans	omnivore
-19	pigeons	omnivore
-18	crows	omnivore
-17	sheep	herbivore
-16	raccoons	omnivore
-15	horses	herbivore
-14	rhesus monkeys	omnivore
-13	falcons	carnivore
-12	rats	omnivore
-11	owls	carnivore
-10	cats	carnivore
-9	squirrels	omnivore
-8	elephants	herbivore
-7	octopus	carnivore
-6	dogs	carnivore
-5	whales	carnivore
-4	parrots	omnivore
-3	bottlenose dolphins	carnivores
-2	pigs	omnivores
-1	chimpanzees	omnivores
+ANIMAL	DIET
+squid	carnivore
+spider	carnivore
+ants	omnivore
+baboons	carnivore
+sea lion	carnivore
+orangutans	omnivore
+pigeons	omnivore
+crows	omnivore
+sheep	herbivore
+raccoons	omnivore
+horses	herbivore
+rhesus monkeys	omnivore
+falcons	carnivore
+rats	omnivore
+owls	carnivore
+cats	carnivore
+squirrels	omnivore
+elephants	herbivore
+octopus	carnivore
+dogs	carnivore
+whales	carnivore
+parrots	omnivore
+bottlenose dolphins	carnivores
+pigs	omnivores
+chimpanzees	omnivores
