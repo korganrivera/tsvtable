@@ -9,10 +9,26 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define TOP_LEFT '.'
-#define TOP_RIGHT ','
-#define BOTTOM_LEFT '\''
-#define BOTTOM_RIGHT '\''
+// #define TOP_LEFT "."
+// #define TOP_RIGHT ","
+// #define BOTTOM_LEFT "\'"
+// #define BOTTOM_RIGHT "\'"
+// #define HOR "-"
+// #define VER "|"
+
+#define TOP_LEFT "┌"
+#define TOP_RIGHT "┐"
+#define BOTTOM_LEFT "└"
+#define BOTTOM_RIGHT "┘"
+#define HOR "─"
+#define VER "│"
+
+
+
+
+
+
+
 
 // Returns length of a str, including punctuation attached to it.
 unsigned strlenpunc(char *str){
@@ -54,9 +70,6 @@ int main(int argc, char **argv){
 
     // null-terminate file content.
     str[sz] = '\0';
-
-    // check.
-    //puts(str);
 
     // count columns by counting tabs on first line.
     for(i = cols = 0; str[i] != '\n'; i++){
@@ -108,19 +121,6 @@ int main(int argc, char **argv){
 
     free(str);
 
-
-    // check array
-    /*
-    puts("checking array");
-    for(i = 0; i < rows; i++){
-        for(j = 0; j < cols; j++){
-            printf("%s ", array[i][j]);
-        }
-        putchar('\n');
-    }
-    printf("rows = %u, cols = %u", rows, cols);
-    */
-
     // Find the largest width for each column.
     unsigned *col_width = malloc(cols * sizeof(unsigned));
     for(i = 0; i < cols; i++){
@@ -138,43 +138,41 @@ int main(int argc, char **argv){
     for(i = 0; i < cols; i++)
         table_width += col_width[i];
     table_width += 3 * cols + 1;
-    // printf("table width = %u\n", table_width);
-    //exit(0);
+
     // draw top of table.
-    printf("\n%c", TOP_LEFT);
+    printf("\n%s", TOP_LEFT);
     for(i = 0; i < table_width - 2; i++)
-        putchar('-');
-    printf("%c\n", TOP_RIGHT);
+        printf(HOR);
+    printf("%s\n", TOP_RIGHT);
 
     // display table.
     for(i = 0; i < rows; i++){
         for(j = 0; j < cols; j++){
-            printf("| %s", array[i][j]);
+            printf("%s %s", VER, array[i][j]);
             unsigned pad = col_width[j] - strlenpunc(array[i][j]) + 1;
-         //   printf("col_width=%u, word=%u, pad = %u", col_width[j], strlenpunc(array[i][j]), pad);
-        //    exit(0);
+
             for(unsigned k = 0; k < pad; k++){
                 putchar(' ');
             }
         }
-        puts("|");
+        puts(VER);
 
         // if last row, print bottom line underneath.
         if(i == rows - 1){
-            putchar(BOTTOM_LEFT);
+            printf(BOTTOM_LEFT);
             for(j = 0; j < table_width - 2; j++){
-                putchar('-');
+                printf(HOR);
             }
-            putchar(BOTTOM_RIGHT);
+            printf(BOTTOM_RIGHT);
         }
 
         // if not last row, print line between rows.
         else{
-            putchar('|');
+            printf(VER);
             for(j = 0; j < table_width - 2; j++){
-                putchar('-');
+                printf(HOR);
             }
-            puts("|");
+            puts(VER);
         }
     }
     putchar('\n');
